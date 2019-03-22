@@ -6,7 +6,7 @@ use SkypeBot\Exception\PayloadException;
 
 class Activity extends Entity
 {
-    const TYPE_TEXT = 'message/text';
+    const TYPE_TEXT = 'message';
     const TYPE_IMAGE = 'message/image';
     const TYPE_CARD = 'message/card';
 

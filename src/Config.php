@@ -7,7 +7,7 @@ class Config
     private $appId;
     private $appSecret;
     private $authEndpoint = 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
-    private $apiEndpoint = 'https://apis.skype.com';
+    private $apiEndpoint = 'https://smba.trafficmanager.net/apis';
     private $openIdEndpoint = 'https://api.aps.skype.com';
 
     /**
