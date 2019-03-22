@@ -13,12 +13,14 @@ class Authenticate extends AnonymousCommand
     protected $appId;
     protected $appSecret;
     protected $authenticateEndpoint;
+    protected $authScope;
 
     public function __construct() {
         $config = SkypeBot::getInstance()->getConfig();
         $this->appId = $config->getAppId();
         $this->appSecret = $config->getAppSecret();
         $this->authenticateEndpoint = $config->getAuthEndpoint();
+        $this->authScope = $config->getAuthScope();
     }
 
     /**
@@ -31,7 +33,7 @@ class Authenticate extends AnonymousCommand
             array (
                 Api::PARAM_PARAMS => array(
                     'grant_type' => 'client_credentials',
-                    'scope' => 'https://graph.microsoft.com/.default',
+                    'scope' => $this->authScope,
                     'client_id' => $this->appId,
                     'client_secret' => $this->appSecret
                 ),

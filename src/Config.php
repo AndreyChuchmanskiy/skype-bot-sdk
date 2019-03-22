@@ -9,6 +9,7 @@ class Config
     private $authEndpoint = 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
     private $apiEndpoint = 'https://smba.trafficmanager.net/apis';
     private $openIdEndpoint = 'https://api.aps.skype.com';
+    private $authScope = 'https://api.botframework.com/.default';
 
     /**
      * Config constructor.
@@ -17,8 +18,9 @@ class Config
      * @param string $authEndpoint
      * @param string $apiEndpoint
      * @param string $openIdEndpoint
+     * @param string $authScope
      */
-    public function  __construct($appId, $appSecret, $apiEndpoint = null, $authEndpoint = null, $openIdEndpoint = null)
+    public function  __construct($appId, $appSecret, $apiEndpoint = null, $authEndpoint = null, $openIdEndpoint = null, $authScope = null)
     {
         $this->appId = $appId;
         $this->appSecret = $appSecret;
@@ -30,6 +32,9 @@ class Config
         }
         if ($openIdEndpoint) {
             $this->openIdEndpoint = $openIdEndpoint;
+        }
+        if ($authScope) {
+            $this->authScope = $authScope;
         }
     }
 
@@ -56,5 +61,10 @@ class Config
     public function getOpenIdEndpoint()
     {
         return $this->openIdEndpoint;
+    }
+
+    public function getAuthScope()
+    {
+        return $this->authScope;
     }
 }
