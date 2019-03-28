@@ -55,6 +55,14 @@ class Payload extends Entity
         return $this->get('recipient', Address::class);
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function getAction()
+    {
+        return $this->get('action');
+    }
+
     public function getType()
     {
         if ($this->type == null) {
