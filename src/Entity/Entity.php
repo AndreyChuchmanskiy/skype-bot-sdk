@@ -31,12 +31,14 @@ abstract class Entity
     }
 
     /**
-     * @param $key
-     * @param $value
+     * @param      $key
+     * @param      $value
+     * @param bool $xmlSafe
+     *
      * @return $this
      * @throws PayloadException
      */
-    public function set($key, $value, $xmlSafe = true)
+    public function set($key, $value, $xmlSafe = false)
     {
         $this->validateInput($key, $value);
         if ($value instanceof Entity) {
